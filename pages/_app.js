@@ -1,7 +1,14 @@
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }) {
+	return (
+		<div>
+			{
+				// Prevent Server from rendering React Router
+				typeof window === 'undefined' ? null : <Component {...pageProps} />
+			}
+		</div>
+	);
 }
 
-export default MyApp
+export default App;
