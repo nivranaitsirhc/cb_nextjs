@@ -2,7 +2,7 @@ import '../styles/globals.css'
 
 function App({ Component, pageProps }) {
 	return (
-		<div>
+		<div suppressHydrationWarning>
 			{
 				// Prevent Server from rendering React Router
 				typeof window === 'undefined' ? null : <Component {...pageProps} />
